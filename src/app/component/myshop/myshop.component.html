@@ -2,15 +2,18 @@
 
 <div class="container-fluid mt-2">
   <div class="row col justify-content-between custom-line">
-    <div class="col-lg-4 mt-1 text-center" *ngFor="let product of products">
+    <div class="col-lg-4 mt-1" *ngFor="let product of products">
       <div class="card mx-auto" id="crd">
         <img [src]="product.picture" class="card-img-top" alt="aucune image">
-        <div class="card-body">
-          <h6 class="card-title">price : {{ product.price }}</h6>
-          <p class="card-text">name : {{ product.name }}</p>
-          <p class="card-text">storage : {{ product.storage }}</p>
-          <p class="card-text">weight : {{ product.weight }}</p>
-          <p class="title">color : {{ product.color }}</p>
+        <div class="card-body mx-auto d-block">
+          <p class="card-title text-center fw-bold">{{ product.name }}</p>
+          <h6 class="text-center">spécifications</h6>
+          <ul>
+          <li class="card-text">price : {{ product.specifications.price }}</li>
+          <li class="card-text">storage : {{ product.specifications.storage }}</li>
+          <li class="card-text">weight : {{ product.specifications.weight }}</li>
+          <li class="card-text">color : {{ product.specifications.color }}</li>
+          </ul>
         </div>
         <div class="card-footer">
           <a [routerLink]="['/product/cart',product.id]" class="btn btn-primary w-100">add to card</a>
