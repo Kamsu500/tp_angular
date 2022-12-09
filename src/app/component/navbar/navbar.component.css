@@ -1,0 +1,9 @@
+#nav{
+  background-color: blue;
+}
+li > a.active {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-color: black;
+  text-decoration-thickness: 0.3rem;
+}
