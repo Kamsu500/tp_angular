@@ -7,7 +7,7 @@ import { NavbarComponent } from './component/navbar/navbar.component';
 import { CartComponent } from './component/cart/cart.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import { MyshopComponent } from './component/myshop/myshop.component';
-
+import { HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +18,8 @@ import { MyshopComponent } from './component/myshop/myshop.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

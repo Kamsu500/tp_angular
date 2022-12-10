@@ -1,3 +1,4 @@
+import { ProductServiceService } from './../../product-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -63,9 +64,26 @@ export class MyshopComponent implements OnInit {
     picture: "https://www.pngmart.com/files/22/iPhone-14-PNG-Image.png"
   }]
 
-  constructor() { }
+  constructor(private productservice:ProductServiceService) { }
 
   ngOnInit(): void {
   }
+
+  addToCart(product:any)
+  {
+    if(!this.productservice.productInCart(product)){
+      product.quatity=1;
+      this.productservice.addTocart(product);
+      this.products=[...this.productservice.getProduct()];
+    }
+  }
+
+  /* get total(){
+    return this.products?.reduce((sum,product)=>({
+    quantity:1,
+    price:sum.price + product.quantity * product.price
+    }),
+    { quantity:1,price:0}).price
+  } */
 
 }
